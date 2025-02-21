@@ -15,7 +15,7 @@ const Footer = () => {
           />
         </Link>
 
-        <p>2024 Event Loom. All Rights reserved.</p>
+        <p>2025 EventLoom. All Rights reserved.</p>
       </div>
     </footer>
   )

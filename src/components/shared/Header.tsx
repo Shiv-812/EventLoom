@@ -1,8 +1,8 @@
-import { SignInButton, SignedIn, SignedOut, UserButton } from '@clerk/nextjs'
+import { SignedIn, SignedOut, UserButton } from '@clerk/nextjs'
 import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
-import { Button } from '../button'
+import { Button } from '../ui/button'
 import NavItems from './NavItems'
 import MobileNav from './MobileNav'
 
