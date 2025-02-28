@@ -8,7 +8,7 @@ import Order from "../database/models/order.model"
 import Event from "../database/models/event.model"
 import { revalidatePath } from "next/cache"
 
-export const createUser =async (user: CreateUserParams) => {
+export const createUser = async (user: CreateUserParams) => {
     try {
         await connectToDatabase();
 
@@ -16,7 +16,8 @@ export const createUser =async (user: CreateUserParams) => {
 
         return JSON.parse(JSON.stringify(newUser));
     } catch (error) {
-        handleError(error)
+        handleError(error);
+        throw error; // Re-throw the error after handling it
     }
 }
 
@@ -30,6 +31,7 @@ export async function getUserById(userId: string) {
       return JSON.parse(JSON.stringify(user))
     } catch (error) {
       handleError(error)
+      throw error; // Re-throw the error after handling it
     }
 }
 
@@ -43,6 +45,7 @@ export async function updateUser(clerkId: string, user: UpdateUserParams) {
       return JSON.parse(JSON.stringify(updatedUser))
     } catch (error) {
       handleError(error)
+      throw error; // Re-throw the error after handling it
     }
 }
 
@@ -76,5 +79,6 @@ export async function deleteUser(clerkId: string) {
       return deletedUser ? JSON.parse(JSON.stringify(deletedUser)) : null
     } catch (error) {
       handleError(error)
+      throw error; // Re-throw the error after handling it
     }
 }
